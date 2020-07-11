@@ -1,0 +1,70 @@
+
+.addgxsite{
+    width: 80%;
+    @include responsive-for(lg) {
+        width: 100%;
+    }
+    &-form{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 1.5em;
+        padding: 0 40px;
+        
+        &-row{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+
+            @include responsive-for(md) {
+                grid-template-columns: 1fr;
+            }
+        }
+        .form{
+            label{
+                font-family: $avertaSemiBold;
+            }
+
+            input,select{
+                height:40px;
+                border-radius:4px;
+                background-color: $light_grey;
+                border: 1px solid $grey;
+                padding: 20px 20px;
+                width: 100%;
+                font-size: $extrathin;
+                height: fit-content;
+                &:focus{
+                    outline-offset: 0px ;
+                    outline: none ;
+                    padding: 20px 20px;
+                    border: 1px solid blue;
+                    }
+            }
+            .showerror{
+                border: 1px solid red;
+                background: #FF434305;
+                &:focus{
+                    border: 1px solid red;
+                    outline-offset: 0px ;
+                    outline: none ;
+                    }
+            }
+        }
+
+        &-button{
+            height:40px;
+            border-radius:4px;
+            background-color: $teal;
+            border:none;
+            padding: 20px 0px;
+            width: 100%;
+            font-size: $thin;
+            font-family: $avertaSemiBold;
+            height: fit-content;
+            cursor: pointer;
+           &:active{
+            border:none;
+           }
+        }
+    }
+}

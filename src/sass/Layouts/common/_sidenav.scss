@@ -1,0 +1,118 @@
+// SIDE NAVIGATION STYLES
+.sidenav-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    background: $white;
+    box-shadow: 4px 0px 19px rgba(0,0,0,0.05);
+    overflow-y: auto;
+    transform: translateX(0%);
+  transition: transform 0.5s ease-out;
+
+//   @media all and (max-width: 667px) {
+//     box-shadow: none;
+//     transform: translateX(-100%);
+//     transition: transform 0.5s ease-out;
+// }
+@include responsive-for(md) {
+  box-shadow: none;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-out;
+  }
+    @include scrollbar(10px, $grey, $light_grey, darken($grey, 10%));
+  
+    .sidenav {
+      &-nav {
+        list-style: none;
+        
+        &-title{
+          a{
+            // cursor: pointer;
+            text-decoration: none;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            column-gap: 10px;
+            align-items: center;
+            color: $black;
+            padding: 20px 35px;
+            font-family: $avertaBold;
+            font-size: larger;
+    
+            .icon {
+              width: 60px;
+      
+              img {
+                width: 100%;
+              }
+            }
+
+          }
+        }
+        &-item {
+          a {
+            text-decoration: none;
+            display: block;
+            color: $black;
+            padding: 20px 35px;
+            font-family: $avertaSemiBold;
+            position: relative;
+            user-select: none;
+            transition: background .3s, color .3s;
+  
+            .icon {
+              position: relative;
+              top: 2px;
+              padding-right: 10px;
+            }
+  
+            &:hover {
+              color:darken($defaultcolor,30%);
+              background: lighten($defaultcolor,32%);
+            }
+  
+            &:active {
+              color: darken($defaultcolor, 10%);
+              background: lighten($defaultcolor, 45%);
+            }
+  
+            &.sidenav-active {
+              color: $white;
+              background: lighten($defaultcolor, 5%);
+  
+              &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 8px;
+                background: darken($defaultcolor,20%);
+                @include animation("animateleft .5s");
+  
+                @include keyframes("animateleft") {
+                  from {
+                    transform: translateX(-20px);
+                  }
+                  to {
+                    transform: translateX(0);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+.closedrawer{ 
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-out;
+
+  @include responsive-for(md) {
+    transform: translateX(0%);
+    transition: transform 0.5s ease-out;
+  }
+}

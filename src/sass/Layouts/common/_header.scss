@@ -1,0 +1,130 @@
+// HEADER STYLE
+
+.header-container {
+    // background-color: white;
+    // box-shadow: 0px 3px 23px rgba(0,0,0,0.05);
+    // position: fixed;
+    // width: 100%;
+    margin-left: 250px;;
+    top: 0;
+    z-index: 2;
+    transition: margin-left 0.5s ease-out;
+    @include responsive-for(md) {
+      margin-left: 0px;
+      transition: margin-left 0.5s ease-out;
+      }
+      
+    .header {
+      // width: $default_width;
+      margin: 0px 15px;
+      padding: 20px 0px;
+  
+      &-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+  
+        &-left {
+          display: flex;
+          align-items: center;
+          
+          .icon {
+            font-size: xx-large;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+          }
+
+          img {
+            width: 65px;
+          }
+  
+          .header-title {
+            color: black;
+            font-size: $small;
+            padding-left: 30px;
+  
+            @include responsive-for(md) {
+              font-size: $extrasmall;
+            }
+          }
+        }
+  
+        &-right {
+  
+          &-logged {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            
+            .user {
+              width: 30px;
+            }
+  
+            &-role {
+              padding-left: 20px;
+              padding-right: 10px;
+            //   font-family: $rumpel;
+              // font-size: $extrasmall;
+              transition: color .5s;
+              user-select: none;
+              
+              &:hover {
+                color: blue;
+              }
+            }
+          }
+  
+          .header-nav {
+            list-style: none;
+  
+            &-item {
+              a {
+                text-decoration: none;
+                // font-family: $rumpel;
+                color: black;
+                font-size: $small;
+                display: block;
+                position: relative;
+  
+                &.menu-active {
+                  color: blue;
+                  
+                  @include keyframes('slideup') {
+                    from {
+                      opacity: 0;
+                      transform: translate(-50%, 10px);
+                    }
+                  }
+            
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    top: 100%;
+                    transform: translateX(-50%);
+                    width: 40px;
+                    height: 6px;
+                    background: blue;
+                    border-radius: 20px;
+                    @include animation('slideup .5s');
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .moveleftheader{
+    margin-left: 0px;
+    transition: margin-left 0.5s ease-out;
+  
+    @include responsive-for(md) {
+      margin-left: 250px;
+      transition: margin-left 0.5s ease-out;
+    }
+  }

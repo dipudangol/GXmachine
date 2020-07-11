@@ -1,0 +1,58 @@
+.nepalmap-container{
+    .nepalmap{
+        position: relative;
+
+
+        .leaflet-container {
+            width: 100%;
+            height: 70vh;
+            box-shadow: 0px 3px 10px rgba(0,0,0,0.12);
+            position: relative;
+        }
+
+        &-legend{
+            background: white; 
+            position: absolute;
+            bottom: 15px;
+            right: 0px ;
+            z-index: 500;
+            padding:5px 5px;
+
+            &-item{
+                display:flex;
+                align-items: center;
+
+                %canvas{
+                    width:30px;
+                    height:30px;
+                    margin-right:5px
+                }
+
+                &-index1{
+                    background:#CB2B3E;
+                    @extend %canvas
+                }
+
+                &-index2{
+                    background:#CB8427;
+                    @extend %canvas
+                }
+                &-index3{
+                    background:#CAC428;
+                    @extend %canvas
+                }
+                &-index4{
+                    background:#FFD326;
+                    @extend %canvas
+                }
+                &-index5{
+                    background:#2AAD27;
+                    @extend %canvas
+                }
+
+            }
+        }
+
+
+    }
+}

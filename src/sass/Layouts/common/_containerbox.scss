@@ -1,0 +1,24 @@
+
+.containerbox-container {
+    // padding-top: 80px;
+    padding-left: 260px;
+    transition: padding-left 0.5s ease-out;
+    .containerbox {
+      padding: 20px;
+    }
+
+    @include responsive-for(md) {
+      padding-left: 0px;
+      transition: padding-left 0.5s ease-out;
+      }
+  }
+
+  .moveleftdrawer{
+    padding-left: 0px;
+    transition: padding-left 0.5s ease-out;
+  
+    @include responsive-for(md) {
+      padding-left: 260px;
+      transition: padding-left 0.5s ease-out;
+    }
+  }

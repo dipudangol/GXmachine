@@ -1,0 +1,62 @@
+.delay{ 
+    background: white;
+    border-radius: 4px; 
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px; 
+    justify-content: start;
+    align-items: center;
+
+    &-list{
+        &-row{
+            display: grid;
+            row-gap: 5px;
+            
+            &-content{
+                display: grid; 
+                row-gap: 5px;
+
+                &-status{
+                    background: #FCFF7C;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+
+                    
+                }
+                &-description{
+                    margin-left: 10px;
+                    background: #FFABAB;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                }
+                &-edit{
+                    padding: 10px 15px;
+                    cursor: pointer;
+                    display: inline-block;
+                    background: #298D27;
+                    color: white;
+                    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 1);
+                &:hover{
+                    box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 1);
+                    transition: box-shadow 0.5s ease-in ease-out;
+                }
+                }
+            }
+
+            &-create{
+                padding: 10px 15px;
+                cursor: pointer;
+                display: inline-block;
+                background: #4971FF;
+                color: white;
+                box-shadow: 1px 2px 3px 0px rgba(0,0,0,1);
+                    &:hover{
+                        box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 1);
+                        transition: box-shadow 0.5s ease-in ease-out;
+                    }
+            }
+
+        }
+    }
+    }
